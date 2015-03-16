@@ -42,6 +42,18 @@ namespace MVCPluginFramework
             _container.ComposeParts(this);
 
             ControllerBuilder.Current.SetControllerFactory(new ControllerPluginFactory(ControllerPlugins));
+            var rve = ViewEngines.Engines.FirstOrDefault(w => w.GetType() == typeof (RazorViewEngine)) as RazorViewEngine;
+
+            foreach (var controllerPlugin in ControllerPlugins)
+            {
+
+                rve.MasterLocationFormats=controllerPlugin.Value.ViewLocations.Union(rve.MasterLocationFormats).ToArray();
+                rve.PartialViewLocationFormats = controllerPlugin.Value.ViewLocations.Union(rve.PartialViewLocationFormats).ToArray();
+                rve.ViewLocationFormats = controllerPlugin.Value.ViewLocations.Union(rve.ViewLocationFormats).ToArray();
+
+            }
+
+            var a = 1;
         }
 
     }

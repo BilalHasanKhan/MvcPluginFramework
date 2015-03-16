@@ -16,16 +16,19 @@ namespace PluginSample
     [PartCreationPolicy(CreationPolicy.NonShared)]
     public class DemoPlug : IControllerPlugin
     {
-        private readonly IController _controller = new DemoPlugController();
+        private readonly Lazy<IController> _controller = new Lazy<IController>(() => new DemoPlugController());
 
         public IController Controller
         {
-            get { return _controller; }
+            get { return _controller.Value; }
         }
 
         public string[] ViewLocations
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                return new string[] {"~/Plugins/{1}/{0}.cshtml"};
+            }
         }
 
         public void InitializePlugin()
