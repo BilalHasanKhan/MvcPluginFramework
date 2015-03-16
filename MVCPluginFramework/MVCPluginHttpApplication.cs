@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using System.Web.Optimization;
 
 namespace MVCPluginFramework
 {
@@ -32,6 +33,14 @@ namespace MVCPluginFramework
             var wp = WidgetPlugins.FirstOrDefault(w => w.Metadata.Name == name).Value;
 
             return wp;
+        }
+
+        public void RegisterBundles(BundleCollection bundles)
+        {
+            foreach (var controllerPlugin in ControllerPlugins)
+            {
+                controllerPlugin.Value.RegisterBundles(bundles);
+            }
         }
 
         public MvcPluginHttpApplication()

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using System.Web.Optimization;
 
 namespace MVCPluginFramework
 {
@@ -13,6 +14,7 @@ namespace MVCPluginFramework
         IController Controller { get; }
         string[] ViewLocations { get; }
 
+        void RegisterBundles(BundleCollection bundles);
         void InitializePlugin();
     }
 

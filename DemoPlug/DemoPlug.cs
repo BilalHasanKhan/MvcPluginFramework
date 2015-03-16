@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web;
+using System.Web.Optimization;
 
 namespace PluginSample
 {
@@ -29,6 +30,11 @@ namespace PluginSample
             {
                 return new string[] {"~/Plugins/{1}/{0}.cshtml"};
             }
+        }
+
+        public void RegisterBundles(BundleCollection bundles)
+        {
+            bundles.Add(new StyleBundle("~/Contentnew/css").Include("~/Content/new.css"));
         }
 
         public void InitializePlugin()
