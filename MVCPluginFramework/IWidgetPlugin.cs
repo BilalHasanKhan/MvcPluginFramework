@@ -4,30 +4,29 @@ using System.ComponentModel.Composition;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Mvc;
+using System.Web;
 
 namespace MVCPluginFramework
 {
-    public interface IControllerPlugin
+    public interface IWidgetPlugin
     {
-        IController Controller { get; }
-        string[] ViewLocations { get; }
-
-        void InitializePlugin();
+        
+        IHtmlString GetHtml { get; }
     }
 
-    public interface IControllerPluginMetadata
+    public interface IWidgetPluginMetadata
     {
-        string Name { get;}
-        string Description { get;}
+        string Name { get; }
+        string Description { get; }
         string Version { get; }
     }
 
     [MetadataAttribute]
     [AttributeUsage(AttributeTargets.Class)]
-    public class ControllerPluginMetadata : ExportAttribute
+    public class WidgetPluginMetadata : ExportAttribute
     {
-        public ControllerPluginMetadata(string name, string description, string version) : base (typeof(IControllerPluginMetadata))
+        public WidgetPluginMetadata(string name, string description, string version)
+            : base(typeof(IWidgetPluginMetadata))
         {
             Name = name;
             Description = description;

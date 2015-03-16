@@ -25,8 +25,6 @@ namespace MVCPluginFramework
         {
             var controllerPlugin = _controllerPlugins.FirstOrDefault(w => w.Metadata.Name == controllerName);
 
-            
-
             if (controllerPlugin == null)
             {
                 return _defaultControllerFactory.CreateController(requestContext, controllerName);

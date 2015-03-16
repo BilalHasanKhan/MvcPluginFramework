@@ -12,15 +12,14 @@ namespace MVCPluginFramework
     {
          public static IHtmlString Widget(this HtmlHelper htmlHelper, string widgetName)
          {
-             var innerTagBuilder = new TagBuilder("li");
-             innerTagBuilder.AddCssClass("active");
-             innerTagBuilder.InnerHtml = widgetName;
+             MvcPluginHttpApplication app = HttpContext.Current.ApplicationInstance as MvcPluginHttpApplication;
+             var widget = app.GetWidgetPlugin(widgetName);
+             if (widget == null)
+             {
+                 return new MvcHtmlString("");
+             }
 
-             var tagBuilder = new TagBuilder("ul");
-             tagBuilder.AddCssClass("breadcrumb");
-             tagBuilder.InnerHtml = innerTagBuilder.ToString(TagRenderMode.Normal);
-
-             return new MvcHtmlString(tagBuilder.ToString(TagRenderMode.Normal)); 
+             return widget.GetHtml;
          }
     }
 }

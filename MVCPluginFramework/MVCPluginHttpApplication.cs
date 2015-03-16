@@ -19,6 +19,21 @@ namespace MVCPluginFramework
         [ImportMany]
         protected Lazy<IControllerPlugin, IControllerPluginMetadata>[] ControllerPlugins = null;
 
+        [ImportMany]
+        protected Lazy<IWidgetPlugin,IWidgetPluginMetadata>[] WidgetPlugins = null;
+
+        public IWidgetPlugin GetWidgetPlugin(string name)
+        {
+            if (!WidgetPlugins.Any())
+            {
+                return null;
+            }
+
+            var wp = WidgetPlugins.FirstOrDefault(w => w.Metadata.Name == name).Value;
+
+            return wp;
+        }
+
         public MvcPluginHttpApplication()
         {
             _pluginPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Plugins");

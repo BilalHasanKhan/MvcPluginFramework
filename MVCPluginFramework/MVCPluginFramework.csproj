@@ -72,6 +72,7 @@
     <Compile Include="ControllerFactory.cs" />
     <Compile Include="HtmlHelperWidgetExtention.cs" />
     <Compile Include="IControllerPlugin.cs" />
+    <Compile Include="IWidgetPlugin.cs" />
     <Compile Include="MVCPluginHttpApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

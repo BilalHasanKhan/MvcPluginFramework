@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCPluginFramework", "MVCPl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoPlug", "DemoPlug\DemoPlug.csproj", "{8A8903C5-EAF1-426D-9D12-449881B19A7F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoWidget", "DemoWidget\DemoWidget.csproj", "{E01BD31B-E4F0-4CE5-8D53-16352B4758EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{8A8903C5-EAF1-426D-9D12-449881B19A7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A8903C5-EAF1-426D-9D12-449881B19A7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A8903C5-EAF1-426D-9D12-449881B19A7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E01BD31B-E4F0-4CE5-8D53-16352B4758EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E01BD31B-E4F0-4CE5-8D53-16352B4758EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E01BD31B-E4F0-4CE5-8D53-16352B4758EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E01BD31B-E4F0-4CE5-8D53-16352B4758EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
