@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
+using System.Web.Optimization;
 using System.Web.SessionState;
 using System.Web.Routing;
 
@@ -30,6 +31,7 @@ namespace MVCPluginFramework
                 return _defaultControllerFactory.CreateController(requestContext, controllerName);
             }
 
+            controllerPlugin.Value.RegisterBundles(BundleTable.Bundles);
             return controllerPlugin.Value.Controller;
         }
 

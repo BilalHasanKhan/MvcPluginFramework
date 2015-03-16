@@ -35,14 +35,6 @@ namespace MVCPluginFramework
             return wp;
         }
 
-        public void RegisterBundles(BundleCollection bundles)
-        {
-            foreach (var controllerPlugin in ControllerPlugins)
-            {
-                controllerPlugin.Value.RegisterBundles(bundles);
-            }
-        }
-
         public MvcPluginHttpApplication()
         {
             _pluginPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Plugins");

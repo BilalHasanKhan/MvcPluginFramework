@@ -34,7 +34,7 @@ namespace PluginSample
 
         public void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new StyleBundle("~/Contentnew/css").Include("~/Content/new.css"));
+            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/new.css"));
         }
 
         public void InitializePlugin()
