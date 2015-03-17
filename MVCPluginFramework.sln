@@ -4,6 +4,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginSample", "PluginSample\PluginSample.csproj", "{52856FB7-4BB5-4383-9682-7D48B87B6260}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E01BD31B-E4F0-4CE5-8D53-16352B4758EA} = {E01BD31B-E4F0-4CE5-8D53-16352B4758EA}
+		{8A8903C5-EAF1-426D-9D12-449881B19A7F} = {8A8903C5-EAF1-426D-9D12-449881B19A7F}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginSample.Tests", "PluginSample.Tests\PluginSample.Tests.csproj", "{79A02919-E891-4C07-A522-99B4FDB483DC}"
 EndProject

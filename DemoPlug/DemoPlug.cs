@@ -17,11 +17,9 @@ namespace PluginSample
     [PartCreationPolicy(CreationPolicy.NonShared)]
     public class DemoPlug : IControllerPlugin
     {
-        private readonly Lazy<IController> _controller = new Lazy<IController>(() => new DemoPlugController());
-
         public IController Controller
         {
-            get { return _controller.Value; }
+            get { return new DemoPlugController(); }
         }
 
         public string[] ViewLocations

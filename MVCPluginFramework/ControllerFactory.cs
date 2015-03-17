@@ -30,8 +30,7 @@ namespace MVCPluginFramework
             {
                 return _defaultControllerFactory.CreateController(requestContext, controllerName);
             }
-
-            controllerPlugin.Value.RegisterBundles(BundleTable.Bundles);
+                       
             return controllerPlugin.Value.Controller;
         }
 
